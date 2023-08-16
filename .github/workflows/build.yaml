@@ -7,10 +7,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [16.x]
+    
     
     steps:
       - name: Checkout source code
@@ -19,7 +16,7 @@ jobs:
       - name: Check Node v
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}        
+          node-version: 16.14.2     
 
       - name: Build front
         run: |
